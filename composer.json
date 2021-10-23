@@ -1,0 +1,17 @@
+{
+    "name": "dima/asti-divi",
+    "description": "Child DIVI Custom WP Theme",
+    "authors": [
+        {
+            "name": "Dima Taran",
+            "email": "taran_da@ukr.net"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AstiDivi\\Classes\\": "Classes"
+        }
+
+    }
+}
