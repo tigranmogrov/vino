@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     class Accordion {
 
-        constructor({target, el}) {
+        constructor({
+            target,
+            el
+        }) {
             this.target = target;
             this.el = el;
             this.open();
@@ -39,7 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    function createHtmlElement({parentNode, el, position = 'afterbegin'}) {
+    function createHtmlElement({
+        parentNode,
+        el,
+        position = 'afterbegin'
+    }) {
         const parent = document.querySelectorAll(`${parentNode}`)
         for (let i = 0; i < parent.length; i++) {
             if (!parent[i]) return;

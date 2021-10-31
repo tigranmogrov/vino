@@ -22,7 +22,7 @@
 ?>
 
     <link rel="pingback"
-        href="<?php bloginfo('pingback_url'); ?>" />
+          href="<?php bloginfo('pingback_url'); ?>" />
 
     <script type="text/javascript">
     document.documentElement.className = 'js';
@@ -30,9 +30,9 @@
 
     <?php wp_head(); ?>
     <link rel="stylesheet"
-        href="http://dima.site/wp-content/themes/AstiDivi/assets/main.css"
-        type="text/css"
-        media="all">
+          href="http://dima.site/wp-content/themes/AstiDivi/assets/main.css"
+          type="text/css"
+          media="all">
 </head>
 
 <body <?php body_class(); ?>>
@@ -42,8 +42,8 @@
 	$product_tour_enabled = et_builder_is_product_tour_enabled();
 	$page_container_style = $product_tour_enabled ? ' style="padding-top: 0px;"' : ''; ?>
     <div id="page-container"
-        class="header-block"
-        <?php echo et_core_intentionally_unescaped( $page_container_style, 'fixed_string' ); ?>>
+         class="header-block"
+         <?php echo et_core_intentionally_unescaped( $page_container_style, 'fixed_string' ); ?>>
         <?php
 	if ( $product_tour_enabled || is_page_template( 'page-template-blank.php' ) ) {
 		return;
@@ -95,9 +95,9 @@
                     <div class="clear"></div>
                     <?php } ?>
                     <form role="search"
-                        method="get"
-                        class="et-search-form"
-                        action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                          method="get"
+                          class="et-search-form"
+                          action="<?php echo esc_url( home_url( '/' ) ); ?>">
                         <?php
 						printf( '<input type="search" class="et-search-field" placeholder="%1$s" value="%2$s" name="s" title="%3$s" />',
 							esc_attr__( 'Search &hellip;', 'Divi' ),
@@ -113,7 +113,7 @@
 						do_action( 'et_search_form_fields' );
 					?>
                         <button type="submit"
-                            id="searchsubmit_header"></button>
+                                id="searchsubmit_header"></button>
                     </form>
                     <?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
 
@@ -122,12 +122,12 @@
                     <div id="et-info">
                         <?php if ( '' !== ( $et_phone_number = et_get_option( 'phone_number' ) ) ) : ?>
                         <span
-                            id="et-info-phone"><?php echo et_core_esc_previously( et_sanitize_html_input_text( $et_phone_number ) ); ?></span>
+                              id="et-info-phone"><?php echo et_core_esc_previously( et_sanitize_html_input_text( $et_phone_number ) ); ?></span>
                         <?php endif; ?>
 
                         <?php if ( '' !== ( $et_email = et_get_option( 'header_email' ) ) ) : ?>
                         <a href="<?php echo esc_attr( 'mailto:' . $et_email ); ?>"><span
-                                id="et-info-email"><?php echo esc_html( $et_email ); ?></span></a>
+                                  id="et-info-email"><?php echo esc_html( $et_email ); ?></span></a>
                         <?php endif; ?>
                     </div>
 
@@ -157,7 +157,7 @@
 				?>
                     <?php if ( 'on' === et_get_option( 'divi_home_link' ) ) { ?>
                     <li <?php if ( is_home() ) echo( 'class="current_page_item"' ); ?>><a
-                            href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'Divi' ); ?></a>
+                           href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'Divi' ); ?></a>
                     </li>
                     <?php }; ?>
 
@@ -188,7 +188,7 @@
 
         <?php ob_start(); ?>
         <header id="main-header"
-            data-height-onload="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>">
+                data-height-onload="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>">
 
             <?php
 				$logo = ( $user_logo = et_get_option( 'divi_logo' ) ) && ! empty( $user_logo )
@@ -210,7 +210,7 @@
                 <span class="logo_helper"></span>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <img src="<?php echo esc_attr( $logo ); ?>"
-                        alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
+                         alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
                 </a>
             </div>
             <?php
@@ -245,8 +245,8 @@
             <div class="may-container">
 
                 <div id="et-top-navigation"
-                    data-height="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>"
-                    data-fixed-height="<?php echo esc_attr( et_get_option( 'minimized_menu_height', '40' ) ); ?>">
+                     data-height="<?php echo esc_attr( et_get_option( 'menu_height', '66' ) ); ?>"
+                     data-fixed-height="<?php echo esc_attr( et_get_option( 'minimized_menu_height', '40' ) ); ?>">
                     <div class="header-block__top">
                         <div class="header-block__top-inner">
                             <?php if ( $et_contact_info_defined ) : ?>
@@ -254,16 +254,15 @@
                             <div class="header-block__info">
                                 <?php if ( '' !== ( $et_phone_number = et_get_option( 'phone_number' ) ) ) : ?>
                                 <a class="header-block__tel"
-                                    href="<?php echo esc_attr( 'tel:' . $et_phone_number ); ?>">
+                                   href="<?php echo esc_attr( 'tel:' . $et_phone_number ); ?>">
                                     <span class="header-block__tel-icon">
                                         <svg width="16"
-                                            height="16"
-                                            viewBox="0 0 16 16"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M11.6 14.667A10.28 10.28 0 0 1 1.333 4.4 3.067 3.067 0 0 1 4.4 1.333c.172-.001.344.015.513.047.164.024.325.064.48.12a.667.667 0 0 1 .434.5l.913 4a.667.667 0 0 1-.173.613c-.087.094-.094.1-.913.527A6.607 6.607 0 0 0 8.9 10.4c.434-.827.44-.833.534-.92a.667.667 0 0 1 .613-.173l4 .913a.667.667 0 0 1 .48.433 2.89 2.89 0 0 1 .167.994 3.067 3.067 0 0 1-3.094 3.02Z"
-                                                fill="#011350" />
+                                             height="16"
+                                             viewBox="0 0 16 16"
+                                             fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.6 14.667A10.28 10.28 0 0 1 1.333 4.4 3.067 3.067 0 0 1 4.4 1.333c.172-.001.344.015.513.047.164.024.325.064.48.12a.667.667 0 0 1 .434.5l.913 4a.667.667 0 0 1-.173.613c-.087.094-.094.1-.913.527A6.607 6.607 0 0 0 8.9 10.4c.434-.827.44-.833.534-.92a.667.667 0 0 1 .613-.173l4 .913a.667.667 0 0 1 .48.433 2.89 2.89 0 0 1 .167.994 3.067 3.067 0 0 1-3.094 3.02Z"
+                                                  fill="#011350" />
                                         </svg>
                                     </span>
                                     <span class="header-block__info-desc">
@@ -272,20 +271,19 @@
 
                                 <?php if ( '' !== ( $et_email = et_get_option( 'header_email' ) ) ) : ?>
                                 <a class="header-block__email"
-                                    href="<?php echo esc_attr( 'mailto:' . $et_email ); ?>">
+                                   href="<?php echo esc_attr( 'mailto:' . $et_email ); ?>">
                                     <span class="header-block__email-icon">
                                         <svg width="16"
-                                            height="16"
-                                            viewBox="0 0 16 16"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M14.667 5.739v5.428a2.166 2.166 0 0 1-2.044 2.163l-.123.003h-9a2.166 2.166 0 0 1-2.163-2.044l-.004-.122V5.739l6.435 3.37a.5.5 0 0 0 .464 0l6.435-3.37ZM3.5 2.667h9a2.166 2.166 0 0 1 2.156 1.949L8 8.103 1.344 4.616A2.167 2.167 0 0 1 3.376 2.67l.124-.003h9-9Z"
-                                                fill="#011350" />
+                                             height="16"
+                                             viewBox="0 0 16 16"
+                                             fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.667 5.739v5.428a2.166 2.166 0 0 1-2.044 2.163l-.123.003h-9a2.166 2.166 0 0 1-2.163-2.044l-.004-.122V5.739l6.435 3.37a.5.5 0 0 0 .464 0l6.435-3.37ZM3.5 2.667h9a2.166 2.166 0 0 1 2.156 1.949L8 8.103 1.344 4.616A2.167 2.167 0 0 1 3.376 2.67l.124-.003h9-9Z"
+                                                  fill="#011350" />
                                         </svg>
                                     </span>
                                     <span
-                                        class="header-block__info-desc"><?php echo esc_html( $et_email ); ?></span></a>
+                                          class="header-block__info-desc"><?php echo esc_html( $et_email ); ?></span></a>
                                 <?php endif; ?>
 
                                 <?php
@@ -328,33 +326,32 @@
 				?>
                                 <div class="header-block__top-left-item">
                                     <div class="header-block__top-link top-link--search"
-                                        id="et_top_search">
+                                         id="et_top_search">
                                         <span class="header-block__top-link-icon">
                                             <svg width="20"
-                                                height="20"
-                                                viewBox="0 0 20 20"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
+                                                 height="20"
+                                                 viewBox="0 0 20 20"
+                                                 fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd"
-                                                    clip-rule="evenodd"
-                                                    d="m13.604 12.416 4.483 4.483a.841.841 0 0 1-1.189 1.188l-4.483-4.483a6.667 6.667 0 1 1 1.188-1.188h.001Zm-5.27.917a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"
-                                                    fill="#011350" />
+                                                      clip-rule="evenodd"
+                                                      d="m13.604 12.416 4.483 4.483a.841.841 0 0 1-1.189 1.188l-4.483-4.483a6.667 6.667 0 1 1 1.188-1.188h.001Zm-5.27.917a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"
+                                                      fill="#011350" />
                                             </svg>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="header-block__top-left-item">
                                     <a href="#"
-                                        class="header-block__top-link top-lin--user">
+                                       class="header-block__top-link top-lin--user">
                                         <span class="header-block__top-link-icon">
                                             <svg width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M20.75 19.265a9.674 9.674 0 0 0-5.755-4.457 5.714 5.714 0 1 0-5.174 0 9.673 9.673 0 0 0-5.755 4.457.49.49 0 0 0 .848.49 8.655 8.655 0 0 1 14.989 0 .49.49 0 1 0 .847-.49ZM7.674 9.716a4.734 4.734 0 1 1 9.468 0 4.734 4.734 0 0 1-9.468 0Z"
-                                                    fill="#011350" />
+                                                 height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.75 19.265a9.674 9.674 0 0 0-5.755-4.457 5.714 5.714 0 1 0-5.174 0 9.673 9.673 0 0 0-5.755 4.457.49.49 0 0 0 .848.49 8.655 8.655 0 0 1 14.989 0 .49.49 0 1 0 .847-.49ZM7.674 9.716a4.734 4.734 0 1 1 9.468 0 4.734 4.734 0 0 1-9.468 0Z"
+                                                      fill="#011350" />
                                             </svg>
                                         </span>
                                         <span class="header-block__top-link-desc">Личный кабинет</span>
@@ -363,16 +360,15 @@
 
                                 <div class="header-block__top-left-item">
                                     <a href="#"
-                                        class="header-block__top-link top-link--like">
+                                       class="header-block__top-link top-link--like">
                                         <span class="header-block__top-link-icon">
                                             <svg width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M11.889 20a.557.557 0 0 1-.34-.116c-3.088-2.395-5.217-4.457-6.706-6.492-1.9-2.6-2.333-5-1.289-7.134.745-1.524 2.884-2.772 5.384-2.046a5.484 5.484 0 0 1 2.95 2.09 5.484 5.484 0 0 1 2.951-2.09c2.495-.715 4.64.522 5.385 2.046 1.044 2.134.61 4.535-1.29 7.134-1.489 2.035-3.617 4.097-6.706 6.492a.556.556 0 0 1-.34.116ZM7.516 5.116A3.284 3.284 0 0 0 4.554 6.74c-.86 1.763-.472 3.725 1.19 5.993a31.71 31.71 0 0 0 6.145 6.009 31.712 31.712 0 0 0 6.145-6.004c1.667-2.273 2.05-4.235 1.19-5.992-.556-1.109-2.223-1.99-4.079-1.47A4.448 4.448 0 0 0 12.4 7.606a.555.555 0 0 1-1.028 0 4.395 4.395 0 0 0-2.745-2.328 4.07 4.07 0 0 0-1.111-.16Z"
-                                                    fill="#011350" />
+                                                 height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.889 20a.557.557 0 0 1-.34-.116c-3.088-2.395-5.217-4.457-6.706-6.492-1.9-2.6-2.333-5-1.289-7.134.745-1.524 2.884-2.772 5.384-2.046a5.484 5.484 0 0 1 2.95 2.09 5.484 5.484 0 0 1 2.951-2.09c2.495-.715 4.64.522 5.385 2.046 1.044 2.134.61 4.535-1.29 7.134-1.489 2.035-3.617 4.097-6.706 6.492a.556.556 0 0 1-.34.116ZM7.516 5.116A3.284 3.284 0 0 0 4.554 6.74c-.86 1.763-.472 3.725 1.19 5.993a31.71 31.71 0 0 0 6.145 6.009 31.712 31.712 0 0 0 6.145-6.004c1.667-2.273 2.05-4.235 1.19-5.992-.556-1.109-2.223-1.99-4.079-1.47A4.448 4.448 0 0 0 12.4 7.606a.555.555 0 0 1-1.028 0 4.395 4.395 0 0 0-2.745-2.328 4.07 4.07 0 0 0-1.111-.16Z"
+                                                      fill="#011350" />
                                             </svg>
                                         </span>
                                         <span class="header-block__top-link-desc">Избранное</span>
@@ -383,17 +379,16 @@
 
                                 <div class="header-block__top-left-item">
                                     <a class="header-block__top-link top-link--cart-count"
-                                        href="#">
+                                       href="#">
                                         <span class="header-block__total-cart-count">9</span>
                                         <span class="header-block__top-link-icon">
                                             <svg width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M21.54 7.854a.545.545 0 0 0-.467-.245H8.64l-.953-3.212a2.478 2.478 0 0 0-.347-.744 1.356 1.356 0 0 0-.467-.435 2.054 2.054 0 0 0-.43-.173A1.518 1.518 0 0 0 6.075 3H3.568A.562.562 0 0 0 3 3.58c0 .097.024.191.073.282.05.09.12.16.21.209a.6.6 0 0 0 .285.072h2.508c.049 0 .095.006.138.018.042.012.1.064.173.155.074.09.135.226.184.408l3.24 11.794a.657.657 0 0 0 .312.363.529.529 0 0 0 .238.055h7.91a.578.578 0 0 0 .339-.11.538.538 0 0 0 .21-.272l2.802-8.165a.578.578 0 0 0-.083-.535Zm-3.672 7.92h-7.05L8.952 8.77h11.28l-2.363 7.004Zm-1.153 2.323c-.403 0-.748.142-1.035.426-.287.285-.43.626-.43 1.025 0 .4.143.741.43 1.026.287.284.632.426 1.035.426.402 0 .747-.142 1.034-.426.287-.285.43-.626.43-1.026 0-.399-.143-.74-.43-1.025a1.417 1.417 0 0 0-1.034-.426Zm-5.274 0c-.268 0-.516.066-.741.2a1.469 1.469 0 0 0-.531.526c-.129.217-.193.46-.193.725 0 .4.144.741.43 1.026.287.284.632.426 1.035.426.403 0 .748-.142 1.035-.426.287-.285.43-.626.43-1.026 0-.096-.01-.193-.027-.29a1.28 1.28 0 0 0-.22-.517 1.578 1.578 0 0 0-.65-.535 1.318 1.318 0 0 0-.275-.082 1.595 1.595 0 0 0-.293-.027Z"
-                                                    fill="#011350" />
+                                                 height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.54 7.854a.545.545 0 0 0-.467-.245H8.64l-.953-3.212a2.478 2.478 0 0 0-.347-.744 1.356 1.356 0 0 0-.467-.435 2.054 2.054 0 0 0-.43-.173A1.518 1.518 0 0 0 6.075 3H3.568A.562.562 0 0 0 3 3.58c0 .097.024.191.073.282.05.09.12.16.21.209a.6.6 0 0 0 .285.072h2.508c.049 0 .095.006.138.018.042.012.1.064.173.155.074.09.135.226.184.408l3.24 11.794a.657.657 0 0 0 .312.363.529.529 0 0 0 .238.055h7.91a.578.578 0 0 0 .339-.11.538.538 0 0 0 .21-.272l2.802-8.165a.578.578 0 0 0-.083-.535Zm-3.672 7.92h-7.05L8.952 8.77h11.28l-2.363 7.004Zm-1.153 2.323c-.403 0-.748.142-1.035.426-.287.285-.43.626-.43 1.025 0 .4.143.741.43 1.026.287.284.632.426 1.035.426.402 0 .747-.142 1.034-.426.287-.285.43-.626.43-1.026 0-.399-.143-.74-.43-1.025a1.417 1.417 0 0 0-1.034-.426Zm-5.274 0c-.268 0-.516.066-.741.2a1.469 1.469 0 0 0-.531.526c-.129.217-.193.46-.193.725 0 .4.144.741.43 1.026.287.284.632.426 1.035.426.403 0 .748-.142 1.035-.426.287-.285.43-.626.43-1.026 0-.096-.01-.193-.027-.29a1.28 1.28 0 0 0-.22-.517 1.578 1.578 0 0 0-.65-.535 1.318 1.318 0 0 0-.275-.082 1.595 1.595 0 0 0-.293-.027Z"
+                                                      fill="#011350" />
                                             </svg>
                                         </span>
                                         <span class="header-block__top-link-desc">Корзина</span>
@@ -417,7 +412,7 @@
                             class="<?php echo esc_attr( $menuClass ); ?>">
                             <?php if ( 'on' === et_get_option( 'divi_home_link' ) ) { ?>
                             <li <?php if ( is_home() ) echo( 'class="current_page_item"' ); ?>><a
-                                    href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'Divi' ); ?></a>
+                                   href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'Divi' ); ?></a>
                             </li>
                             <?php }; ?>
 
@@ -442,7 +437,7 @@
 
                     <?php if ( $et_slide_header || is_customize_preview() ) : ?>
                     <span
-                        class="mobile_menu_bar et_pb_header_toggle et_toggle_<?php echo esc_attr( et_get_option( 'header_style', 'left' ) ); ?>_menu"></span>
+                          class="mobile_menu_bar et_pb_header_toggle et_toggle_<?php echo esc_attr( et_get_option( 'header_style', 'left' ) ); ?>_menu"></span>
                     <?php endif; ?>
 
                     <?php if ( ( false !== et_get_option( 'show_search_icon', true ) && ! $et_slide_header ) || is_customize_preview() ) : ?>
@@ -463,9 +458,9 @@
             </div>
             <div class="container et_search_form_container">
                 <form role="search"
-                    method="get"
-                    class="et-search-form"
-                    action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                      method="get"
+                      class="et-search-form"
+                      action="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <?php
 						printf( '<input type="search" class="et-search-field" placeholder="%1$s" value="%2$s" name="s" title="%3$s" />',
 							esc_attr__( 'Search &hellip;', 'Divi' ),
@@ -506,7 +501,7 @@
             <div class="banner-img">
                 <div class="banner-img__inner">
                     <img src="http://dima.site/wp-content/themes/AstiDivi/assets/banner.jpg"
-                        alt="img desc">
+                         alt="img desc">
                 </div>
             </div>
             <br>
@@ -518,15 +513,15 @@
                     product_tag-secco product_tag-akujezi product_tag-asti product_tag-italija 
                     product_tag-sekko product_tag-shampanskoe has-post-thumbnail shipping-taxable purchasable product-type-simple">
                     <a href="http://dima.site/spumante/acquesi-asti-secco-docg"
-                        class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><span
-                            class="et_shop_image"><img width="300"
-                                height="300"
-                                src="http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min-300x300.jpg"
-                                class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                                alt="Acquesi Asti Secco DOCG Купить Шампанское Асти Акуэзи Секко цена Италия"
-                                loading="lazy"
-                                srcset="http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min-300x300.jpg 300w, http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min-150x150.jpg 150w, http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min.jpg 600w, http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min-100x100.jpg 100w"
-                                sizes="(max-width: 300px) 100vw, 300px"><span class="et_overlay"></span></span>
+                       class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><span
+                              class="et_shop_image"><img width="300"
+                                 height="300"
+                                 src="http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min-300x300.jpg"
+                                 class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                 alt="Acquesi Asti Secco DOCG Купить Шампанское Асти Акуэзи Секко цена Италия"
+                                 loading="lazy"
+                                 srcset="http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min-300x300.jpg 300w, http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min-150x150.jpg 150w, http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min.jpg 600w, http://dima.site/wp-content/uploads/2018/08/Acquesi-asti-secco-docg-min-100x100.jpg 100w"
+                                 sizes="(max-width: 300px) 100vw, 300px"><span class="et_overlay"></span></span>
                         <h2 class="woocommerce-loop-product__title">Шампанское Acquesi Asti Secco DOCG Асти Акуэзи Секко
                             Италия купить, спец цена</h2>
 
@@ -537,20 +532,19 @@
                             <span class="price">
                                 <span class="product__old-price">289 грн.</span>
                                 <span class="woocommerce-Price-amount amount"><bdi>300&nbsp;<span
-                                            class="woocommerce-Price-currencySymbol">грн.</span></bdi></span></span>
+                                              class="woocommerce-Price-currencySymbol">грн.</span></bdi></span></span>
 
                         </div>
                     </a>
                     <!-- class favorite--active added at the of a button and change text in button -->
                     <button class="product__favorite-button favorite--active">
                         <svg width="38"
-                            height="38"
-                            viewBox="0 0 38 38"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M19 28C18.8481 27.9995 18.7006 27.9509 18.5806 27.8618C14.7574 25.018 12.1239 22.5692 10.2811 20.1534C7.92947 17.066 7.39313 14.2157 8.68584 11.6814C9.60724 9.87109 12.2545 8.38997 15.3488 9.25232C16.8241 9.66027 18.1113 10.5352 19 11.734C19.8887 10.5352 21.1759 9.66027 22.6512 9.25232C25.7386 8.40314 28.3928 9.87109 29.3142 11.6814C30.6069 14.2157 30.0705 17.066 27.7189 20.1534C25.8761 22.5692 23.2426 25.018 19.4194 27.8618C19.2994 27.9509 19.1519 27.9995 19 28Z"
-                                fill="none" />
+                             height="38"
+                             viewBox="0 0 38 38"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 28C18.8481 27.9995 18.7006 27.9509 18.5806 27.8618C14.7574 25.018 12.1239 22.5692 10.2811 20.1534C7.92947 17.066 7.39313 14.2157 8.68584 11.6814C9.60724 9.87109 12.2545 8.38997 15.3488 9.25232C16.8241 9.66027 18.1113 10.5352 19 11.734C19.8887 10.5352 21.1759 9.66027 22.6512 9.25232C25.7386 8.40314 28.3928 9.87109 29.3142 11.6814C30.6069 14.2157 30.0705 17.066 27.7189 20.1534C25.8761 22.5692 23.2426 25.018 19.4194 27.8618C19.2994 27.9509 19.1519 27.9995 19 28Z"
+                                  fill="none" />
                         </svg>
 
                         <span class="product__favorite-text">
@@ -573,19 +567,19 @@
                         <div class="product-card__quantity">
                             <form>
                                 <button type="button"
-                                    class="product-card__quantity-minus">-</button>
+                                        class="product-card__quantity-minus">-</button>
                                 <label>
                                     <input type="text"
-                                        value="1">
+                                           value="1">
                                 </label>
                                 <button type="button"
-                                    class="product-card__quantity-plus">+</button>
+                                        class="product-card__quantity-plus">+</button>
                             </form>
                         </div>
                         <a href="http://dima.site/spumante/acquesi-asti-secco-docg"
-                            rel="nofollow"
-                            data-product_id="1760"
-                            class="button add_to_cart_button product_type_simple">Купить</a>
+                           rel="nofollow"
+                           data-product_id="1760"
+                           class="button add_to_cart_button product_type_simple">Купить</a>
                     </div>
                 </li>
             </ul>
