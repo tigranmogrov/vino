@@ -1,10 +1,6 @@
-
 <?php get_header();
-
-
 ?>
-
-    <div id="main-content">
+<div id="main-content">
         <div class="container">
             <div id="content-area" class="clearfix">
                 <div id="left-area">
@@ -88,7 +84,4 @@
         </div> <!-- .container -->
     </div> <!-- #main-content -->
 
-<?php
-
-get_footer();
-
+<?php get_footer();

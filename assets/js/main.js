@@ -99,6 +99,126 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    sidebarMenu();
 
-})
+    function vulidateInputQuantity() {
+        const input = document.querySelectorAll('[data-quantity-input]');
+        for (let i = 0; i < input.length; i++) {
+            input[i].addEventListener('input', function () {
+                input[i].value = input[i].value.replace(/\D/, '');
+            })
+        }
+    }
+
+    function addCardProductCount() {
+        let products = document.querySelectorAll('.products .product');
+
+
+        for (let i = 0; i < products.length; i++) {
+
+            let plus = products[i].querySelector('[data-quantity-plus]');
+            let minus = products[i].querySelector('[data-quantity-minus]');
+            let input = products[i].querySelector('[data-quantity-input]');
+            let quantity = products[i].querySelector('[data-quantity]');
+            let maxProductsCount = products[i].querySelector('[data-max-products]');
+
+
+
+            function errorMessage(index) {
+                const errorText = products[index].querySelector('[data-error-message]').getAttribute('data-error-message');
+                if (!products[index].querySelector('.error-messages__max-products')) {
+                    products[index].insertAdjacentHTML('beforeend', `<span class="error-messages__max-products">${errorText}</span>`);
+                    setTimeout(() => {
+                        products[index].querySelector('.error-messages__max-products').remove();
+                    }, 3000)
+                }
+            }
+
+
+            const maxCount = +maxProductsCount.getAttribute('data-max-products');
+            if (!input) return;
+            let val = +input.value
+
+
+            plus.addEventListener('click', (e) => {
+
+                if (input.value >= maxCount) {
+                    input.value = maxCount;
+                    val = maxCount;
+                    input.setAttribute('value', `${maxCount}`);
+                    quantity.setAttribute("data-quantity", `${maxCount}`);
+                    errorMessage(i);
+                } else {
+                    input.value = input.value === maxCount ? maxCount : `${val += 1}`;
+                    input.setAttribute('value', `${input.value}`);
+                    quantity.setAttribute("data-quantity", `${input.value}`);
+                }
+
+            })
+
+            minus.addEventListener('click', () => {
+
+                if (!(input.value <= 1)) {
+                    input.value = `${val -= 1}`;
+                    quantity.setAttribute("data-quantity", `${input.value}`);
+                    input.setAttribute('value', `${input.value}`);
+                }
+
+
+            })
+
+            input.addEventListener('input', () => {
+
+                if (input.value >= maxCount) {
+                    input.value = maxCount;
+                    quantity.setAttribute("data-quantity", `${maxCount}`);
+                    input.setAttribute('value', `${maxCount}`);
+                    val = maxCount;
+                    errorMessage(i);
+                } else {
+                    val = input.value > maxCount ? maxCount : +input.value;
+                    input.value = (input.value <= 0) ? '' : input.value;
+                    quantity.setAttribute("data-quantity", `${input.value <= 0 ? 1 : input.value}`);
+                    input.setAttribute('value', `${input.value <= 0 ? 1 : input.value}`);
+                }
+
+            })
+
+        }
+
+
+    }
+
+
+
+
+
+    function addToCard() {
+
+        function removeDisable() {
+            let updateBtn = $('[name="update_cart"]');
+
+            if (updateBtn) {
+                updateBtn.removeAttr('disabled');
+                updateBtn.attr('aria-disabled', 'false')
+            }
+        }
+
+        $(document).on('click', '[data-quantity-plus]', function () {
+            $(this).prev().val(+$(this).prev().val() + 1);
+            removeDisable();
+        });
+        $(document).on('click', '[data-quantity-minus]', function () {
+            if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+            removeDisable();
+        });
+    }
+
+
+
+    sidebarMenu();
+    vulidateInputQuantity();
+    addCardProductCount();
+    addToCard();
+
+
+});
