@@ -21,7 +21,7 @@ class CustomEnqueueStyles
 
         add_action('wp_enqueue_scripts', array($this, 'addCartScript'));
         add_action('wp_enqueue_scripts', array($this, 'deleteScript'));
-        add_action('wp_enqueue_scripts', array($this, 'addStyle'), 99);
+        add_action('wp_enqueue_scripts', array($this, 'addStyle'), 200);
     }
 
     public function loadJS($js_paths, $pref = '')
